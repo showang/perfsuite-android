@@ -32,7 +32,7 @@ public object RenderingMetricsMapper {
             }
             if (frameDuration > SLOW_FRAME_THRESHOLD_MS) {
                 slow += numberOfFrames.toLong()
-                totalFreezeTime += frameDuration * numberOfFrames
+                totalFreezeTime += (frameDuration - SLOW_FRAME_THRESHOLD_MS) * numberOfFrames
             }
             total += numberOfFrames.toLong()
         }
